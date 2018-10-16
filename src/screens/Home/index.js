@@ -14,11 +14,6 @@ const CustomImage = styled(Image)`
 `
 
 class Home extends React.PureComponent {
-  static navigatorStyle = {
-    navBarHidden: true,
-    tabBarHidden: true,
-  }
-
   static propTypes = {}
 
   render() {

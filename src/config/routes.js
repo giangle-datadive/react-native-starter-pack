@@ -1,12 +1,13 @@
-import { createStackNavigator } from 'react-navigation'
+import { DrawerNavigator } from 'react-navigation'
 import Home from '../screens/Home'
 import transitionConfig from './transitions'
+import SideMenu from '../components/SideMenu'
 
 export const routes = {
   home: 'Home',
 }
 
-export default createStackNavigator(
+export default DrawerNavigator(
   {
     Home: {
       screen: Home,
@@ -14,7 +15,6 @@ export default createStackNavigator(
   },
   {
     transitionConfig,
-    initialRouteParams: { transition: 'fade' },
-    initialRouteName: 'Home',
+    contentComponent: SideMenu,
   },
 )

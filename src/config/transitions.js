@@ -1,9 +1,9 @@
-import CardStackStyleInterpolator from 'react-navigation/src/views/StackView/StackViewStyleInterpolator'
+import StackViewStyleInterpolator from 'react-navigation-stack/dist/views/StackView/StackViewStyleInterpolator';
 import { Animated, Easing, Platform } from 'react-native'
 
 const {
   forHorizontal, forVertical, forFadeFromBottomAndroid, forFade,
-} = CardStackStyleInterpolator
+} = StackViewStyleInterpolator
 
 const TransitionSpec = {
   duration: 500,
