@@ -1,31 +1,62 @@
+import { Button, Icon, Right, Text } from 'native-base'
+import PropTypes from 'prop-types'
 import React from 'react'
-import { Image } from 'react-native'
 import styled from 'styled-components'
+import AppContainer from '../../components/Container'
 
 const Wrapper = styled.View`
   flex: 1;
   justify-content: center;
-  align-self: center;
+  align-items: center;
+  padding: 0 35px;
 `
 
-const CustomImage = styled(Image)`
-  height: 120px;
-  width: 120px;
+const LogoText = styled.Text`
+  font-family: "Benguiat";
+  font-size: 24px;
+  text-transform: uppercase;
+  color: rgb(123, 23, 15);
+  margin-top: -150px;
+`
+
+const WrapSeason = styled.View`
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 14px;
+  align-self: stretch;
+`
+
+const SoundQuoteButton = styled(Button)`
+  margin-top: 14px;
 `
 
 class Home extends React.PureComponent {
-  static propTypes = {}
+  static propTypes = {
+  }
+
+  openDrawer = () => {
+    const { navigation } = this.props
+    navigation.openDrawer()
+  }
 
   render() {
     return (
-      <Wrapper>
-        <CustomImage
-          resizeMode="contain"
-          source={{
-            uri: 'https://avatars0.githubusercontent.com/u/22128074',
-          }}
-        />
-      </Wrapper>
+      <AppContainer>
+        <Wrapper>
+          <LogoText>Stranger things</LogoText>
+          <WrapSeason>
+            <Button warning bordered>
+              <Text>Season 1</Text>
+            </Button>
+            <Button onPress={this.openDrawer} warning bordered>
+              <Text>Season 2</Text>
+            </Button>
+          </WrapSeason>
+          <SoundQuoteButton block boder danger>
+            <Text>Sound Quotes</Text>
+          </SoundQuoteButton>
+        </Wrapper>
+      </AppContainer>
     )
   }
 }

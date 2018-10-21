@@ -1,4 +1,4 @@
-package com.reactnativestarterpack;
+package com.strangerthingapp;
 
 import android.app.Application;
 
