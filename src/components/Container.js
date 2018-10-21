@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { ScrollView } from 'react-native'
 import { DrawerActions } from 'react-navigation'
 import {
   Header, Right, Button, Icon,
@@ -33,7 +34,9 @@ class AppContainer extends PureComponent {
             </Button>
           </Right>
         </StyledHeader>
-        {children}
+        <ScrollView>
+          {children}
+        </ScrollView>
       </StyledContainer>
     )
   }
